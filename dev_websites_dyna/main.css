@@ -1,0 +1,32 @@
+#top ul li{
+    display: inline-block;
+}
+
+#top ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+#top ul li a:visited{
+    text-decoration: none;
+}
+
+
+figure img{
+    height: 200px;
+}
+
+figure figcaption{
+    color: white;
+    background-color: black;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+
+.actorFlex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
