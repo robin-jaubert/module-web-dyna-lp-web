@@ -11,6 +11,9 @@
     text-decoration: none;
 }
 
+.navHome{
+    background-color: red;
+}
 
 figure img{
     height: 200px;
