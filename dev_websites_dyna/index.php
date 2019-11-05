@@ -6,10 +6,17 @@ include 'php/getBlock.php';
 getBlock('php/init_page.php');
 
 //Get the navbar
-getBlock('php/create_header.php', array('class' => 'navHome'));
+getBlock('php/create_header.php', array(
+    'class' => 'navHome'
+));
 
 //affiches
-getBlock('php.infos-affiches.php');
+getBlock('php/infos-affiches.php', array(
+    '0' => 'img/affiche_incassable.jpg',
+    '1' => 'img/affiche_split.jpg',
+    '2' => 'img/affiche_glass.jpg'
+));
+
 //film infos
 
 //director infos
