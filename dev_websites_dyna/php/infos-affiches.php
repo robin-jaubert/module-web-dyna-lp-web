@@ -10,21 +10,25 @@
 
         <?php
         $alt = null;
-        for($i = 0; $i < 3; $i -= -1){
-            if ($data[$i] === "img/affiche_incassable.jpg"){
+        $title = null;
+        for($i = 0; $i < 3; $i += 1){
+            if ($i === 0){
                 $alt = 'affiche_Incassable';
+                $title = 'Affiche d\'Incassable';
             }
-            elseif ($data[$i] === "img/affiche_split.jpg"){
+            elseif ($i === 1){
                 $alt = 'affiche_Split';
+                $title = 'Affiche de Split';
             }
-            elseif ($data[$i] === "img/affiche_glass.jpg"){
+            elseif ($i === 2){
                 $alt = 'affiche_Glass';
+                $title = 'Affiche de Glass';
             }
             ?>
 
             <figure>
                 <img src=<?=$data[$i]?> alt=<?= $alt?>>
-                <figcaption> Affiche de Incassable </figcaption>
+                <figcaption> <?= $title?> </figcaption>
             </figure>
 
             <?php

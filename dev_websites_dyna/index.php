@@ -18,6 +18,13 @@ getBlock('php/infos-affiches.php', array(
 ));
 
 //film infos
+getBlock('php/film_infos.php', array(
+    'titre' => 'Split',
+    'datetime' => '2017-02-22',
+    'date' => '22 Fevrier 2017',
+    'presse' => '37',
+    'spectateurs' => '41'
+));
 
 //director infos
 
