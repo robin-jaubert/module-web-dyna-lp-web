@@ -1,21 +1,37 @@
 <?php
-$ptipresse = $data['presse'] / 10;
-$ptispectateurs = $data['spectateurs']/10;
+include_once 'pdo_helpers.php';
 
-$labelpresse = $ptipresse. '/5';
-$labelpressespect = $ptispectateurs. '/5';
+
+function movieInfo($data){
+    $movie = $data['title'];
+    $pdo= pdoCreate("mysql-jaubert.alwaysdata.net", "jaubert_web_dyna", "jaubert_web_dyna", "webdyna");
+    $query = $pdo->prepare('Select title, synopsis, releaseDate, rating from jaubert_web_dyna.movie where title=\''.$movie.'\'');
+    $query->execute();
+    if ($query->rowCount() != 1){
+        echo 'Film non trouvé';
+        return null;
+    }
+    else{
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+}
+
+$array = movieInfo($data);
+$title = $array['title'];
+$date =$array['releaseDate'];
+$synopsis = $array['synopsis'];
+$note = $array['rating'];
+
 ?>
-
 <section>
-    <article>
-        <h1>
-            Fiche du film
-        </h1>
-        <p>
-            Titre : <?= $data['titre']?><br>
-            Sortie : <time datetime=<?=$data['datetime']?>> <?= $data['date']?> </time><br>
-            Synopsis : Kevin possède 23 personnalités, avec des attributs physiques différents pour chacune, mais l’une d’elles reste enfouie au plus profond de lui. Elle va bientôt se manifester et prendre le pas sur toutes les autres. Poussé à kidnapper trois adolescentes, dont la jeune Casey, Kevin devient dans son âme et sa chair, le foyer d’une guerre que se livrent ses multiples personnalités, alors que les divisions qui régnaient jusqu’alors dans son subconscient volent en éclats.<br>
-            Notes sur Allocine : <label for="presse"> Presse : </label> <meter id="presse" min="0" max="50" value=<?= $data['presse'] ?> title=<?= $labelpresse?>></meter>, <label for="spectateurs"> Spectateurs : </label> <meter id="spectateurs" min="0" max="50" value=<?= $data['spectateurs']?> title=<?= $labelpressespect?>></meter><br>
-        </p>
-    </article>
+    <h1>
+        Informations sur le film
+    </h1>
+    <p>
+        Titre : <?=$title?><br>
+        Date de sortie : <?=$date?><br>
+        Synopsis : <?=$synopsis?><br>
+        Moyenne des notes sur Allocin&eacute : <label for="note"> Note sur 5 : </label> <meter id="note" min="0" max="50" value="<?=$note * 10?>" title="<?=$note?>/5"></meter>
+    </p>
 </section>

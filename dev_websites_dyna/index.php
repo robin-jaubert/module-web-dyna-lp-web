@@ -14,9 +14,9 @@ getBlock('php/infos-affiches.php', array(
     '2' => 'glass'
 ));
 
-//getBlock('php/film_infos.php', array(
-//    'titre' => 'Split'
-//));
+getBlock('php/film_infos.php', array(
+   'title' => 'Split'
+));
 
 //getBlock('php/ppl_infos.php',array(
 //    'type'=>'director',

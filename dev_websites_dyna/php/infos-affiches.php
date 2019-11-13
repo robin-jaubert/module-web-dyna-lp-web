@@ -22,8 +22,6 @@ function infosAffiches($i, $data){
     }
 }
 
-//['path'] chemin sans 'img/', ['legend'] ce qu'il y a sous l'image
-
 ?>
 
 <section>
