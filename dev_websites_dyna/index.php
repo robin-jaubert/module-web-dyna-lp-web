@@ -1,5 +1,5 @@
 <?php
-include 'php/movie_page_wrapper.php';
+include 'php/wrapper_movie_page.php';
 
 createMoviePage(array(
     'nav'=>'navHome',

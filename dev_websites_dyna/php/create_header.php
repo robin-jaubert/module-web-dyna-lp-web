@@ -7,7 +7,7 @@ switch ($data['class']) {
         <header>
             <nav id="top">
                 <ul>
-                    <li><a href='#' class=<?= $data['class'] ?>> Accueil | </a></li>
+                    <li><a href='#' class="navHome"> Accueil | </a></li>
                     <li><a href='director.php'> Directeur | </a></li>
                     <li><a href='actors.php'> Acteurs </a></li>
                 </ul>
@@ -23,7 +23,7 @@ switch ($data['class']) {
             <nav id="top">
                 <ul>
                     <li><a href='index.php'> Accueil | </a></li>
-                    <li><a href='#' class=<?= $data['class'] ?>> Directeur | </a></li>
+                    <li><a href='#' class="navHome> Directeur | </a></li>
                     <li><a href='actors.php'> Acteurs </a></li>
                 </ul>
             </nav>
@@ -39,7 +39,7 @@ switch ($data['class']) {
                 <ul>
                     <li><a href='index.php'> Accueil | </a></li>
                     <li><a href='director.php'> Directeur | </a></li>
-                    <li><a href='#' class=<?= $data['class'] ?>> Acteurs </a></li>
+                    <li><a href='#' class=navHome> Acteurs </a></li>
                 </ul>
             </nav>
         </header>
