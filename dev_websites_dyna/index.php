@@ -1,32 +1,11 @@
 <?php
-include 'php/getBlock.php';
+include 'php/movie_page_wrapper.php';
 
-
-getBlock('php/init_page.php');
-
-getBlock('php/create_header.php', array(
-    'class' => 'navHome'
+createMoviePage(array(
+    'nav'=>'navHome',
+    'movie'=>'Split',
+    'affiches'=>['incassable','split','glass']
 ));
 
-getBlock('php/infos-affiches.php', array(
-    '0' => 'incassable',
-    '1' => 'split',
-    '2' => 'glass'
-));
 
-getBlock('php/film_infos.php', array(
-   'title' => 'Split'
-));
-
-getBlock('php/ppl_infos.php',array(
-    'type'=>'director',
-    'movie' => 'Split'
-));
-
-getBlock('php/ppl_infos.php',array(
-    'type'=>'actor',
-    'movie'=>'Split'
-));
-
-//getBlock('php/create_footer.php');
 ?>
